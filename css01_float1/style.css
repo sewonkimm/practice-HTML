@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  background-color: black;
+
+  font-family: "Roboto", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+a {
+  font-size: 18px;
+  line-height: 20px;
+  color: #8492a6;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+  background-color: white;
+  border-bottom: 1px solid #e5eaef;
+}
+
+.tab-menu {
+  /* float 때문에 생긴 layout 붕괴 해결법 1
+  overflow: hidden; */
+}
+
+/* float 때문에 생긴 layout 붕괴 해결법 2 - 가상요소 만들기 */
+.tab-menu::after {
+  content: "";
+  display: block;
+  clear: left;
+}
+
+.tab-menu-item {
+  float: left;
+  margin-right: 16px;
+}
+
+.tab-menu-item a {
+  display: block;
+  padding: 16px 20px;
+}
+
+.tab-menu-item.selected {
+  border-bottom: 2px solid #2860e1;
+}
+.tab-menu-item.selected a {
+  color: #2860e1;
+  font-weight: 500;
+}
